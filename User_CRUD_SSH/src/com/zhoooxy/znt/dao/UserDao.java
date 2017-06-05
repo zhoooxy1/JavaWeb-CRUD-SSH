@@ -9,4 +9,5 @@ public interface UserDao {
 	public List<User> getUser();
 	public void modUser();
 	public boolean logUser();
+	long findUserCount(User u);
 }

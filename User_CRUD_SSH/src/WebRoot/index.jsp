@@ -88,7 +88,7 @@
 			 var arr = $('#regform').serialize();
 			 var b = arr.replace(/%20/g,"");
 			 b = decodeURIComponent(b);
-			
+			alert(b);
 				$.ajax({
 					url: "userhomes.action",     
 					 //相当于form表单里面的 action="AdminAction_login"
@@ -101,9 +101,10 @@
 					dataType: "json",
 					success: function(result) {
 						if(result.code == 1){
-							 window.location.href="success.jsp";
+						window.location="success.jsp";
 						}else if(result.code == -1){
 							$("#adderror").show();
+							$("#addright").hide();
 							}
 							},
 					error: function () {
@@ -155,10 +156,13 @@
 		<div id="adderror" style="display:none">
 			<p>邮箱或用户名已经存在</p>
 		</div>
+		<div id="addright" style="display:none">
+			<p>可以注册</p>
+		</div>
 
     <div id="reg"  style="display:none">
 	    <form action="userhome.action" id="regform" >
-	    	<input type="hidden" name="action" value="useradd"/>
+	    	<!-- <input type="hidden" name="action" value="useradd"/> -->
 	    	<table >
 	    		<tr>
 	    			<td >邮箱</td>

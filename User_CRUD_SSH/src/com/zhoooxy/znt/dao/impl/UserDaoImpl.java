@@ -48,4 +48,11 @@ public class UserDaoImpl implements UserDao {
 		return false;
 	}
 
+	@Override
+	public long findUserCount(User u) {
+		String hql = "select count(*) as a from t_user where username = ? or email = ? ";
+		long i = (long)this.hibernateTemplate.find(hql,u.getUserName(),u.getEmail()).listIterator().next();
+		return i;
+	}
+
 }

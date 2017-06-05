@@ -49,4 +49,13 @@ public class UserServiceImpl implements UserService {
 		return false;
 	}
 
+	@Override
+	public boolean findUserCount(User u) {
+		long i = this.userdao.findUserCount(u);
+		if(i == 0){
+			return false;
+		}
+		return true;
+	}
+
 }

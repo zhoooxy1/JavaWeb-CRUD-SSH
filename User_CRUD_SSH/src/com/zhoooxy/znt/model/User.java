@@ -1,6 +1,6 @@
 package com.zhoooxy.znt.model;
 
-import java.util.Date;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,9 +12,15 @@ public class User {
 	private String UserName;
 	private String PassWord;
 	private String Email;
-	private Date Rig_date;
+	private String Rig_date;
 	
 
+	public String getRig_date() {
+		return Rig_date;
+	}
+	public void setRig_date(String rig_date) {
+		Rig_date = rig_date;
+	}
 	@Id
 	@GeneratedValue
 	public int getUserid() {
@@ -24,12 +30,7 @@ public class User {
 		Userid = userid;
 	}
 	
-	public Date getRig_date() {
-		return Rig_date;
-	}
-	public void setRig_date(Date rig_date) {
-		Rig_date = rig_date;
-	}
+	
 	public String getUserName() {
 		return UserName;
 	}

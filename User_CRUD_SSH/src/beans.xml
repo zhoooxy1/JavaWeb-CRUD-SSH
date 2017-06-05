@@ -77,7 +77,7 @@
 		</bean>
 
 
-		 <aop:config>
+		  <aop:config>
 			<aop:pointcut 
 				expression="execution(public * com.zhoooxy.znt.service.*.*(..))" 
 				id="bussinessService" />
@@ -87,7 +87,7 @@
 	
 		<tx:advice id="txAdvice" transaction-manager="txManager">
 			<tx:attributes>
-				<tx:method name="exists" read-only="true" />
+				<tx:method name="execute" read-only="false" />
 				<tx:method name="add*" propagation="REQUIRED"/>
 			</tx:attributes>
 		</tx:advice>

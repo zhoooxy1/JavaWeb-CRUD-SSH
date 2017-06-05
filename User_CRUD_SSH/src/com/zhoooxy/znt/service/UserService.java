@@ -9,4 +9,5 @@ public interface UserService {
 	public List<User> getUser();
 	public void modUser();
 	public boolean logUser();
+	boolean findUserCount(User u);
 }
